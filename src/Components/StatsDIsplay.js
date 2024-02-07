@@ -1,16 +1,22 @@
 import React from "react";
 
-const StatsDIsplay = ({ pokeStat, pokeName }) => {
+const StatsDisplay = ({ pokeStats, pokeName }) => {
+  if (!pokeStats) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <h2>{pokeName} Stats:</h2>
       <ul>
-        {pokeStat.map((stat) => (
-          <li></li>
+        {pokeStats.map((att) => (
+          <li key={att.stat.name}>
+            {att.stat.name} : {att.base_stat}
+          </li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default StatsDIsplay;
+export default StatsDisplay;

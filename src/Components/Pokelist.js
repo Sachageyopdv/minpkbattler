@@ -11,6 +11,7 @@ const Pokelist = ({ pokeData, setPokeFighter }) => {
       onChange={handleSelectChange}
       style={{ padding: "5px", borderRadius: "5px", margin: "10px" }}
     >
+      <option>Selectionner un pokémon</option>
       {pokeData.map((poke) => (
         <option key={poke.name} value={poke.name}>
           {poke.name}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import StatsDisplay from "./StatsDIsplay";
 
 const Fight = ({ poke1, poke2 }) => {
   const [poke1Stats, setPoke1Stats] = useState(null);
@@ -28,6 +29,8 @@ const Fight = ({ poke1, poke2 }) => {
 
   return (
     <div>
+      <StatsDisplay pokeStats={poke1Stats} pokeName={poke1.name} />
+      <StatsDisplay pokeStats={poke2Stats} pokeName={poke2.name} />
       <button
         onClick={startFight}
         style={{ padding: "5px", borderRadius: "5px", margin: "10px" }}

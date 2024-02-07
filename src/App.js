@@ -14,16 +14,14 @@ function App() {
       .catch((error) => console.error("Error fectching data:", error));
   }, []);
 
-  console.log(fightPokeData1);
-  console.log(fightPokeData2);
-
   return (
     <>
       <h1>Pokebattler</h1>
       <Pokelist pokeData={pokeData} setPokeFighter={setFightPokeData1} />
       <Pokelist pokeData={pokeData} setPokeFighter={setFightPokeData2} />
-      {fightPokeData1 &&
-        fightPokeData2 && (<Fight poke1={fightPokeData1} poke2={fightPokeData2} />)}
+      {fightPokeData1 && fightPokeData2 && (
+        <Fight poke1={fightPokeData1} poke2={fightPokeData2} />
+      )}
     </>
   );
 }
