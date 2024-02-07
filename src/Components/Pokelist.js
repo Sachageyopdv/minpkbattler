@@ -1,4 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+
+const List = styled.select`
+  padding: 5px;
+  border-radius: 90px;
+  margin: 10px;
+`;
 
 const Pokelist = ({ pokeData, setPokeFighter }) => {
   const handleSelectChange = (e) => {
@@ -7,17 +14,14 @@ const Pokelist = ({ pokeData, setPokeFighter }) => {
   };
 
   return (
-    <select
-      onChange={handleSelectChange}
-      style={{ padding: "5px", borderRadius: "5px", margin: "10px" }}
-    >
+    <List onChange={handleSelectChange}>
       <option>Selectionner un pokémon</option>
       {pokeData.map((poke) => (
         <option key={poke.name} value={poke.name}>
           {poke.name}
         </option>
       ))}
-    </select>
+    </List>
   );
 };
 

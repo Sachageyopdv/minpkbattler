@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Pokelist from "./Components/Pokelist";
 import Fight from "./Components/Fight";
+import styled from "styled-components";
 
 function App() {
   const [pokeData, setPokeData] = useState([]);
